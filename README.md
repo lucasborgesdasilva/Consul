@@ -35,28 +35,26 @@ ifconfig
 ### Criar o server
 
 ```bash
-consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=172.22.0.2 -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+  consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=172.22.0.2 -data-dir=/var/lib/consul -config-dir=/etc/consul.d
 ```
-**-bootstrap-expect=** (Indica quantos servers eu estou esperando)
-**-node=**             (Nome do nosso server)
-**-bind=**             (Informar o ip consultado anteriormente)
-**-data-dir=**         (Diretório onde o consul guarda os arquivos dele)
-**-config-dir=**       (Diretório onde ficam os arquivos de configuração)
+- **-bootstrap-expect=** (Indica quantos servers eu estou esperando)
+- **-node=**             (Nome do nosso server)
+- **-bind=**             (Informar o ip consultado anteriormente)
+- **-data-dir=**         (Diretório onde o consul guarda os arquivos dele)
+- **-config-dir=**       (Diretório onde ficam os arquivos de configuração)
 
-!!! tip "Dica importante"
-    Antes de rodar esse comando é necessário ter os diretórios informados criados. Rode primeiro o mkdir antes do consul.
+**"Dica importante"**
+- Antes de rodar esse comando é necessário ter os diretórios informados criados. Rode primeiro o mkdir antes do consul.
 
-    ```bash
-    mkdir /etc/consul.d
-    ```
-    ```bash
-    mkdir /var/lib/consul
-    ```
+```bash
+  mkdir /etc/consul.d
+  mkdir /var/lib/consul
+```
 
 ### Verificar se o server esta de pé
 
 ```bash
-consul members
+  consul members
 ```
 
 ### Criar o Cluster
@@ -65,5 +63,5 @@ consul members
   Basta passar o ip dos outros servers que ele adiciona, e ao consultar novamente os servidores estarão sendo exibidos.
 
 ```bash
-consul join <ip-de-cada-servidor>
+  consul join <ip-do-servidor>
 ```
