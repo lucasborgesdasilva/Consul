@@ -23,7 +23,7 @@ docker compose up -d
 ### Acessar o Servidor Consul
 
 ```bash
-docker exec -it <nome-do-container> sh  
+docker exec -it <id-ou-nome-do-container> sh  
 ```
 
 ### Verificar o ip para a criação do server
@@ -64,4 +64,9 @@ ifconfig
 
 ```bash
   consul join <ip-do-servidor>
+```
+
+### Criar um client
+```bash
+  consul agent -bind=172.22.0.4 -data-dir=/var/lib/consul -config-dir=/etc/consul.d
 ```
