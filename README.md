@@ -32,7 +32,7 @@ docker exec -it <id-ou-nome-do-container> sh
 ifconfig
 ```
 
-### Criar o server
+### Criar e executar o server 
 
 ```bash
   consul agent -server -bootstrap-expect=3 -node=consulserver01 -bind=172.22.0.2 -data-dir=/var/lib/consul -config-dir=/etc/consul.d
@@ -69,4 +69,9 @@ ifconfig
 ### Criar um client
 ```bash
   consul agent -bind=172.22.0.4 -data-dir=/var/lib/consul -config-dir=/etc/consul.d
+```
+
+### Informar onde o serviço está registrado
+```bash
+consul catalog nodes -service <nome-do-serviço>
 ```
