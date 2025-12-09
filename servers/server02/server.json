@@ -6,5 +6,6 @@
   "retry_join": [
     "172.22.0.2",
     "172.22.0.3"
-  ]
+  ],
+  "encrypt": "CT7QFNlTkMcHiHaQODrx5GZLt4dgk/pPpc6kgEENv1U="
 }

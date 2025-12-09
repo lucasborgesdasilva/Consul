@@ -82,3 +82,9 @@ consul catalog nodes -service <nome-do-serviço>
 ```bash
   consul agent -bind=172.22.0.4 -data-dir=/var/lib/consul -config-dir=/etc/consul.d -retry-join=172.22.0.2
 ```
+
+### encrypt
+- Dentro do consul podemos gerar uma chave de criptografia
+```bash
+consul keygen
+```
