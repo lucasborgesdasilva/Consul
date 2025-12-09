@@ -75,3 +75,10 @@ ifconfig
 ```bash
 consul catalog nodes -service <nome-do-serviço>
 ```
+
+### retry-join
+- Serve para quando subirmos o nosso client, automaticamente ele adiciona no cluster. Podemos passar quantos retry-joins
+  nos quisermos.
+```bash
+  consul agent -bind=172.22.0.4 -data-dir=/var/lib/consul -config-dir=/etc/consul.d -retry-join=172.22.0.2
+```
